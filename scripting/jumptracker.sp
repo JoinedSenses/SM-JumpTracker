@@ -24,7 +24,7 @@ public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max
 }
 
 public void OnPluginStart() {
-	CreateConVar("sm_jumptracker_version", PLUGIN_VERSION, PLUGIN_DESCRIPTION, FCVAR_SPONLY|FCVAR_REPLICATED|FCVAR_NOTIFY|FCVAR_DONTRECORD).SetString(PLUGIN_VERSION);
+	CreateConVar("sm_jumptracker_version", PLUGIN_VERSION, PLUGIN_DESCRIPTION, FCVAR_SPONLY|FCVAR_NOTIFY|FCVAR_DONTRECORD).SetString(PLUGIN_VERSION);
 
 	g_hForwardJumped = CreateGlobalForward("JT_OnClientJumped", ET_Ignore, Param_Cell);
 	g_hForwardLanded = CreateGlobalForward("JT_OnClientLanded", ET_Ignore, Param_Cell);
