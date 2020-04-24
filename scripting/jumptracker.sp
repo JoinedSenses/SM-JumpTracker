@@ -51,7 +51,6 @@ public Action OnPlayerRunCmd(int client, int& buttons) {
 
 	int onGround = GetEntityFlags(client) & FL_ONGROUND;
 	if (((buttons & IN_JUMP) | onGround) == IN_JUMP && g_bOnGroundLastFrame[client]) {
-
 		Call_StartForward(g_hForwardJumped);
 		Call_PushCell(client);
 		Call_Finish();
@@ -59,7 +58,6 @@ public Action OnPlayerRunCmd(int client, int& buttons) {
 		g_bPlayerJumped[client] = true;
 	}
 	else if (g_bPlayerJumped[client] && onGround) {
-
 		Call_StartForward(g_hForwardLanded);
 		Call_PushCell(client);
 		Call_Finish();
